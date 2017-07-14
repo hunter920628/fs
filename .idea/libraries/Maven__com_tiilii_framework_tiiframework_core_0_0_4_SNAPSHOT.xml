@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.tiilii.framework:tiiframework-core:0.0.4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tiilii/framework/tiiframework-core/0.0.4-SNAPSHOT/tiiframework-core-0.0.4-20170121.111717-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tiilii/framework/tiiframework-core/0.0.4-SNAPSHOT/tiiframework-core-0.0.4-20170121.111717-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tiilii/framework/tiiframework-core/0.0.4-SNAPSHOT/tiiframework-core-0.0.4-20170121.111717-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

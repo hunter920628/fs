@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.tiilii.framework:tiiFramework-freemarker:0.0.3-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tiilii/framework/tiiframework-freemarker/0.0.3-SNAPSHOT/tiiFramework-freemarker-0.0.3-20170121.122612-3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tiilii/framework/tiiFramework-freemarker/0.0.3-SNAPSHOT/tiiFramework-freemarker-0.0.3-20170121.122612-3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tiilii/framework/tiiFramework-freemarker/0.0.3-SNAPSHOT/tiiFramework-freemarker-0.0.3-20170121.122612-3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

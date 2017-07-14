@@ -1,0 +1,87 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="fs2:war exploded">
+    <output-path>$PROJECT_DIR$/target/fs2</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="fs2" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxws:3.0.0" />
+          <element id="library" level="project" name="Maven: xml-resolver:xml-resolver:1.2" />
+          <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-core:3.0.0" />
+          <element id="library" level="project" name="Maven: org.codehaus.woodstox:woodstox-core-asl:4.3.0" />
+          <element id="library" level="project" name="Maven: org.codehaus.woodstox:stax2-api:3.1.4" />
+          <element id="library" level="project" name="Maven: org.apache.ws.xmlschema:xmlschema-core:2.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-bindings-soap:3.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-wsdl:3.0.0" />
+          <element id="library" level="project" name="Maven: wsdl4j:wsdl4j:1.6.3" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-databinding-jaxb:3.0.0" />
+          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.2.7" />
+          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-core:2.2.7" />
+          <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:2.16" />
+          <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.12" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-bindings-xml:3.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-simple:3.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-ws-addr:3.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-ws-policy:3.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.neethi:neethi:3.0.3" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxrs:3.0.0" />
+          <element id="library" level="project" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0" />
+          <element id="library" level="project" name="Maven: javax.annotation:javax.annotation-api:1.2" />
+          <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-transports-http:3.0.0" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.7" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/tiilii/framework/tiiframework-data/0.0.4-SNAPSHOT/tiiFramework-data-0.0.4-SNAPSHOT.jar" output-file-name="tiiframework-data-0.0.4-SNAPSHOT.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/tiilii/framework/tiiFramework-web/0.0.4-SNAPSHOT/tiiFramework-web-0.0.4-20170213.042457-2.jar" output-file-name="tiiFramework-web-0.0.4-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: net.pieroxy.ua:detection:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.tika:tika-core:1.12" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/tiilii/framework/tiiFramework-security/0.0.4-SNAPSHOT/tiiFramework-security-0.0.4-20170210.063655-1.jar" output-file-name="tiiFramework-security-0.0.4-SNAPSHOT.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/tiilii/framework/tiiFramework-image/0.0.4-SNAPSHOT/tiiFramework-image-0.0.4-20170210.063255-1.jar" output-file-name="tiiFramework-image-0.0.4-SNAPSHOT.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/tiilii/framework/tiiframework-freemarker/0.0.3-SNAPSHOT/tiiFramework-freemarker-0.0.3-20170121.122612-3.jar" output-file-name="tiiFramework-freemarker-0.0.3-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
+          <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.7.2" />
+          <element id="library" level="project" name="Maven: us.codecraft:xsoup:0.1.0" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/tiilii/framework/tiiframework-core/0.0.4-SNAPSHOT/tiiframework-core-0.0.4-20170121.111717-1.jar" output-file-name="tiiframework-core-0.0.4-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aspects:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.9" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-instrument:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-instrument-tomcat:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jms:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:4.3.5.RELEASE" />
+          <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.8.0" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.5" />
+          <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" />
+          <element id="library" level="project" name="Maven: com.jolbox:bonecp:0.8.0.RELEASE" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:15.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/fs2/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="fs2/web/Web" />
+    </root>
+  </artifact>
+</component>

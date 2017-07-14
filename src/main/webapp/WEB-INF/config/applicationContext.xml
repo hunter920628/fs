@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	   xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	   xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:cxf="http://cxf.apache.org/core"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://cxf.apache.org/jaxws
+        http://cxf.apache.org/schemas/jaxws.xsd
+        http://cxf.apache.org/jaxrs
+        http://cxf.apache.org/schemas/jaxrs.xsd http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+
+	<context:annotation-config />
+	<!-- 如果要使用spring的annotation,必须配置如下内容 -->
+	<context:component-scan base-package="com.tiilii"></context:component-scan>
+
+	<bean id="propertyConfigurer"
+		  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		  p:location="/WEB-INF/config/jdbc.properties" />
+
+	<bean id="firstDataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		  destroy-method="close">
+		<property name="driverClass" value="${first.driverClassName}" />
+		<property name="jdbcUrl" value="${first.url}" />
+		<property name="username" value="${first.username}" />
+		<property name="password" value="${first.password}" />
+		<property name="idleConnectionTestPeriod" value="${first.idleConnectionTestPeriodInMinutes}" />
+		<property name="idleMaxAge" value="${first.idleMaxAge}" />
+		<property name="maxConnectionsPerPartition" value="${first.maxConnectionsPerPartition}" />
+		<property name="minConnectionsPerPartition" value="${first.minConnectionsPerPartition}" />
+		<property name="partitionCount" value="${first.partitionCount}" />
+		<property name="acquireIncrement" value="${first.acquireIncrement}" />
+		<property name="statementsCacheSize" value="${first.statementsCacheSize}" />
+		<property name="releaseHelperThreads" value="${first.releaseHelperThreads}" />
+	</bean>
+
+	<bean id="secondDataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		  destroy-method="close" p:driverClass="${second.driverClassName}"
+		  p:jdbcUrl="${second.url}" p:username="${second.username}" p:password="${second.password}"
+		  p:idleConnectionTestPeriodInMinutes="${second.idleConnectionTestPeriodInMinutes}"
+		  p:idleMaxAgeInMinutes="${second.idleMaxAgeInMinutes}"
+		  p:maxConnectionsPerPartition="${second.maxConnectionsPerPartition}"
+		  p:minConnectionsPerPartition="${second.minConnectionsPerPartition}"
+		  p:partitionCount="${second.partitionCount}" p:acquireIncrement="${second.acquireIncrement}"
+		  p:statementsCacheSize="${second.statementsCacheSize}"
+		  p:releaseHelperThreads="${second.releaseHelperThreads}" />
+	<bean id="firstTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="firstDataSource" />
+	</bean>
+
+	<bean id="dimTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="secondDataSource" />
+	</bean>
+
+	<!-- 注解方式的AOP支持 -->
+	<aop:aspectj-autoproxy/>
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<cxf:bus>
+		<cxf:properties>
+			<!--  定义上传的最大长度， 这里是256 -->
+			<!--<entry key="org.apache.cxf.stax.maxTextLength" value="268435456"></entry>-->
+		</cxf:properties>
+	</cxf:bus>
+
+	<!-- 此处定义的是 SOAP协议风格的WebService服务 ， 其中address是服务的接口地址，
+				 例如输入http://192.168.0.109:8093/resource/services/ 
+				 可访问 接口中服务的方法     -->
+	<jaxws:server id="fsService" address="/fsService">
+		<jaxws:serviceBean>
+			<ref bean="fsServiceB" />
+		</jaxws:serviceBean>
+		<jaxws:properties>
+			<!-- 开启mtom -->
+			<entry key="mtom_enabled" value="true"></entry>
+		</jaxws:properties>
+		 <!-- 配置发布路径 -->
+		<!-- <jaxws:properties>  		   
+          <entry key="publishedEndpointUrl" 
+          		value="http://message.tiilii.com/services/resourceService" />  
+        </jaxws:properties>  -->
+		<jaxws:inInterceptors>
+			<!-- 日志 IN -->
+			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor"></bean>
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<!-- 日志out-->
+			<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"></bean>
+		</jaxws:outInterceptors>
+	</jaxws:server>
+</beans>
